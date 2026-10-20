@@ -77,6 +77,8 @@ h2{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:-.
 .socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
 .socials svg{width:20px;height:20px;fill:currentColor}
 .socials .h{font-family:var(--display);font-weight:800;font-size:1.15rem;line-height:1}
+.copy-line{margin-top:8px;font-size:.92rem;color:var(--muted)}
+.copy-line button{font:inherit;color:var(--accent);background:none;border:0;border-bottom:1px dashed var(--accent);cursor:pointer;padding:0}
 footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:.85rem}
 
 /* hero text rises in on load */
@@ -150,6 +152,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-s
       <div>
         <h2>Let's connect</h2>
         <p>I'm open to internships, networking conversations, and new projects. The fastest way to reach me is email.</p>
+        <p class="copy-line">Or copy my email: <button type="button" id="copy-email" data-email="cpreynol@uab.edu">cpreynol@uab.edu</button></p>
       </div>
       <div class="contact-links">
         <a class="btn btn-primary" href="mailto:cpreynol@uab.edu">Email me</a>
@@ -184,6 +187,14 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-s
       hero.style.setProperty('--my', (e.clientY - r.top) + 'px');
     });
   }
+  const cb = document.getElementById('copy-email');
+cb.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(cb.dataset.email);
+    cb.textContent = 'Copied!';
+    setTimeout(() => cb.textContent = cb.dataset.email, 1800);
+  } catch (e) {}
+});
 </script>
 </body>
 </html>
