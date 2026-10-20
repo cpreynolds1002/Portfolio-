@@ -72,8 +72,10 @@ h2{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:-.
 .contact p{color:var(--body-text);max-width:30em}
 .contact-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .socials{display:contents}
-.socials a{padding:9px 18px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:500;font-size:.93rem;color:var(--muted);transition:color .2s,border-color .2s}
-.socials a:hover{color:var(--text);border-color:var(--accent)}
+.socials a{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;color:var(--muted);text-decoration:none;transition:color .2s,border-color .2s,transform .2s}
+.socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.socials svg{width:20px;height:20px;fill:currentColor}
+.socials .h{font-family:var(--display);font-weight:800;font-size:1.15rem;line-height:1}
 footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:.85rem}
 
 /* hero text rises in on load */
