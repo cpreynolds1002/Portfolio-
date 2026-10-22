@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooper Reynolds | Portfolio</title>
+<meta name="description" content="Cooper Reynolds, Finance student. Resume, about me, and contact.">
+<meta property="og:title" content="Cooper Reynolds | Portfolio">
+<meta property="og:description" content="Finance student. Resume, about me, and contact.">
+<meta property="og:type" content="website">
+<!-- SEARCH VISIBILITY: keep this line while the site is private. Delete it when you want employers to find you. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#f3f5fa;
+  --band:#e4e7ee;
+  --line:#dde2ec;
+  --text:#0f1b33;
+  --muted:#5b6578;
+  --body-text:#36425a;
+  --accent:#1f3d7a;
+  --accent-ink:#ffffff;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.06rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-family:var(--display);font-weight:700;text-decoration:none;font-size:1.05rem}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.92rem;transition:color .2s}
+nav ul a:hover{color:var(--text)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:40px 0 48px}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(520px circle at var(--mx,70%) var(--my,30%),rgba(31,61,122,.10),transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 250px;gap:44px;align-items:center}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,6.5vw,4.6rem);line-height:.98;letter-spacing:-.035em}
+.meta{margin-top:14px;color:var(--muted);font-size:1rem}
+.lede{margin-top:10px;max-width:32em;font-size:1.1rem;color:var(--text)}
+.actions{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;transition:transform .2s,border-color .2s}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent)}
+.photo{aspect-ratio:4/5;border-radius:22px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+
+/* sections */
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
+.two-col{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+.about p{color:var(--body-text)}
+.about p+p{margin-top:12px}
+.resume-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.resume-box p{color:var(--muted);margin-bottom:16px}
+.resume-box .btns{display:flex;flex-wrap:wrap;gap:10px}
+.resume-box p strong{display:block;color:var(--text);font-family:var(--display);font-size:1.15rem;margin-bottom:2px}
+.contact .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.contact h2{margin-bottom:6px}
+.contact p{color:var(--body-text);max-width:30em}
+.contact-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.socials{display:contents}
+.socials a{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;color:var(--muted);text-decoration:none;transition:color .2s,border-color .2s,transform .2s}
+.socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.socials svg{width:20px;height:20px;fill:currentColor}
+.socials .h{font-family:var(--display);font-weight:800;font-size:1.15rem;line-height:1}
+.contact{background:var(--band);border-top:1px solid #d3d8e2}
+.contact .socials a{background:#fff;border-color:#cdd3df}
+footer{background:var(--band);padding:18px 0;color:var(--muted);font-size:.85rem}
+
+/* hero text rises in on load */
+@media (prefers-reduced-motion:no-preference){
+  .hero .wrap>div:first-child>*{opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero .wrap>div:first-child>*:nth-child(2){animation-delay:.07s}
+  .hero .wrap>div:first-child>*:nth-child(3){animation-delay:.14s}
+  .hero .wrap>div:first-child>*:nth-child(4){animation-delay:.21s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+
+@media (max-width:820px){
+  .hero{padding:28px 0 36px}
+  .hero .wrap{grid-template-columns:1fr;gap:24px}
+  .photo{max-width:200px;aspect-ratio:1/1}
+  .two-col{grid-template-columns:1fr;gap:28px}
+  nav ul{gap:16px}
+  section{padding:32px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="#top">Cooper Reynolds</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero" id="hero">
+    <div class="wrap">
+      <div>
+        <h1>Cooper Reynolds</h1>
+        <p class="meta">Finance student at UAB</p>
+        <p class="lede">I'm using the skills I acquired in politics to transition into the field of finance.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="resume.html">View my resume</a>
+          <!-- CHECK: confirm this is your correct email address (also used in the Contact section) -->
+          <a class="btn btn-ghost" href="mailto:cpreynol@uab.edu">Email me</a>
+        </div>
+      </div>
+      <div class="photo"><img src="headshot.jpg" alt="Cooper Reynolds"></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap two-col">
+      <div class="about" id="about">
+        <h2>About me</h2>
+        <p>I am a sophomore finance student at UAB who enjoys challenging myself and working with others to achieve my goals. I am proud of my time in politics and the work I accomplished, and I am ready to apply my skills in a new field.</p>
+        <p>After graduation, I want to pursue campaign finance and continue to leverage the network I have built over the past seven years. Outside of class, I am a runner and I love being involved in student organizations on campus. My Myers-Briggs type is ENTP.</p>
+      </div>
+      <div id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="resume-box">
+          <p><strong>Work from my time at UAB</strong>Projects and coursework I have completed as a student.</p>
+          <a class="btn btn-primary" href="portfolio.html">View my work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Let's connect</h2>
+        <p>I'm open to internships, networking conversations, and new projects. The fastest way to reach me is email.</p>
+      </div>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:cpreynol@uab.edu">Email me</a>
+        <div class="socials">
+  <a href="https://www.linkedin.com/in/cooper-reynolds-uab/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <a href="https://app.joinhandshake.com/profiles/cooper-reynolds-uab" target="_blank" rel="noopener" aria-label="Handshake" title="Handshake">
+    <span class="h" aria-hidden="true">h</span>
+  </a>
+  <a href="https://x.com/cooperreynold20" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+  </a>
+</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr">2026</span> Cooper Reynolds</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Soft light that follows the cursor across the hero
+  const hero = document.getElementById('hero');
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches && matchMedia('(pointer: fine)').matches) {
+    hero.addEventListener('pointermove', e => {
+      const r = hero.getBoundingClientRect();
+      hero.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      hero.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  }
+</script>
+</body>
+</html>
